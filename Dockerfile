@@ -1,13 +1,13 @@
 FROM openjdk:8
-# plugin version from https://github.com/nowsecure/auto-circleci-plugin/releases
-ENV PLUGIN_VERSION 1.2.0e
+# plugin version from https://github.com/nowsecure/gitlabci/releases
+ENV PLUGIN_VERSION 1.2.0-rc1
 #
 # Download nowsecure plugin source
 RUN mkdir -p /usr/local/share/nowsecure
-RUN curl -Ls https://github.com/nowsecure/auto-circleci-plugin/archive/${PLUGIN_VERSION}.tar.gz | tar -xzf - -C /usr/local/share/nowsecure
-RUN cp /usr/local/share/nowsecure/auto-circleci-plugin-${PLUGIN_VERSION}/bin/nowsecure.sh /usr/local/bin/nowsecure.sh
+RUN curl -Ls https://github.com/nowsecure/gitlabci/archive/${PLUGIN_VERSION}.tar.gz | tar -xzf - -C /usr/local/share/nowsecure
+RUN cp /usr/local/share/nowsecure/gitlabci-${PLUGIN_VERSION}/bin/nowsecure.sh /usr/local/bin/nowsecure.sh
 
-ENV PLUGIN_JAR /usr/local/share/nowsecure/auto-circleci-plugin-${PLUGIN_VERSION}/dist/all-in-one-jar-${PLUGIN_VERSION}.jar
+ENV PLUGIN_JAR /usr/local/share/nowsecure/gitlabci-${PLUGIN_VERSION}/dist/all-in-one-jar-${PLUGIN_VERSION}.jar
 #
 ### Execute script to execute nowsecure plugin
 ### You can customize plugin using following environment variables:
