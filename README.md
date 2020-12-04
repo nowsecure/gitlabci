@@ -22,7 +22,7 @@ nowsecure:
     AUTO_TOKEN: xxx
     BINARY_FILE: /path/to/artifact/apk/or/ipa/file
   script:
-    - bash run-tests
+    - nowsecure.sh
 ```
 
 Note that you will generate mobile binary using gradle, Makefile, Fastlane or other tools instead of copying file but it shows how binary file will be created and then passed to the Auto CircleCI Orb for security analysis.
