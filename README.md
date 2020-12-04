@@ -14,7 +14,7 @@ Purpose-built for mobile app teams, NowSecure provides fully automated, mobile a
 You should pass `auto_token` in via CI/CI variable in GitLab Settings instead in the Job Definition for security reasons.
 
 ```yaml
-nowsecure-auto:
+nowsecure:
   stage: test
   image: nowsecure/gitlabci:v1.1.0
   variables:
