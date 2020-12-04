@@ -9,17 +9,6 @@ This image gives you the ability to perform automatic mobile app security testin
 Purpose-built for mobile app teams, NowSecure provides fully automated, mobile appsec testing coverage (static+dynamic+behavioral tests) optimized for the dev pipeline. Because NowSecure tests the mobile app binary post-build from CircleCI, it can test software developed in any language and provides complete results including newly developed code, 3rd party code, and compiler/operating system dependencies. With near zero false positives, NowSecure pinpoints real issues in minutes, with developer fix details, and routes tickets automatically into ticketing systems, such as Jira. NowSecure is frequently used to perform security testing in parallel with functional testing in the dev cycle. Requires a license for and connection to the NowSecure software.
  https://www.nowsecure.com
 
-## Job Parameters
-
-All of these can be and should be passed in as variables to GitLab CI jobs.
-
-- `auto_token` **Required** - Authentication token for API. Visit https://docs.nowsecure.com/auto/integration-services/jenkins-integration to generate token.
-- `auto_group` **Required** The Group ID that the testing should be submitted against.
-- `auto_url` (default: https://lab-api.nowsecure.com) API location, this generally should not be changed
-- `max_wait` (default: 30) Maximum wait in minutes until security test is completed. To skip the wait, set to 0.
-- `min_score` (default: 50) Minimum score the app must have otherwise the job will fail
-- `auto_show_status_messages` (default: true) Specify flag to show status messages from automation testing. Set to false to hide status messages
-
 ## Sample Usage
 
 You should pass `auto_token` in via CI/CI variable in GitLab Settings instead in the Job Definition for security reasons.
@@ -27,10 +16,11 @@ You should pass `auto_token` in via CI/CI variable in GitLab Settings instead in
 ```yaml
 nowsecure-auto:
   stage: test
-  image: nowsecure/auto-gitlab-plugin:v1.1.0
+  image: nowsecure/gitlabci:v1.1.0
   variables:
-    auto_group: 00000000-0000-0000-0000-000000000000
-    binary_file: /path/to/artifact/apk/or/ipa/file
+    AUTO_GROUP: 00000000-0000-0000-0000-000000000000
+    AUTO_TOKEN: xxx
+    BINARY_FILE: /path/to/artifact/apk/or/ipa/file
   script:
     - bash run-tests
 ```
