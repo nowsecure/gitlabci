@@ -16,7 +16,7 @@ You should pass `auto_token` in via CI/CI variable in GitLab Settings instead in
 ```yaml
 nowsecure:
   stage: test
-  image: nowsecure/gitlabci:v1.1.0
+  image: nowsecure/gitlab-ci:latest
   variables:
     AUTO_GROUP: 00000000-0000-0000-0000-000000000000
     AUTO_TOKEN: xxx
