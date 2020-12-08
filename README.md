@@ -27,7 +27,7 @@ Generate token as described in https://nowsecurehelp.zendesk.com/hc/en-us/articl
 Following are optional parameters that can be set from environment variables:
 
 - `NOWSECURE_MIN_WAIT=nn (default 30)` - Default max wait in minutes for the mobile analysis
-- `MAX_SCORE=nn (default 50)` - Minimum score the app must have otherwise it would fail
+- `NOWSECURE_MIN_SCORE=nn (default 50)` - Minimum score the app must have otherwise it would fail
 - `NOWSECURE_ARTIFACTS_DIR=/home/gradle/artifacts` - Specifies artifacts directory where json files are stored
 
 
