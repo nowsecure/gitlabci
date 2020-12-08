@@ -94,3 +94,8 @@ The CI/CD will be run when you check-in new changes or you can select CI/CD opti
 ![Submit Pipeline](/images/gitlab_3.png)
 
 ![View Pipeline](/images/gitlab_4.png)
+
+## Verifying the Build
+Upon completion of CI/CD job, you will see a score of your mobile app. Note: you can configure your build to fail the CI/CD job when score is below a configurable miniumum value, e.g.
+
+![View Score](/images/gitlab_5.png)
