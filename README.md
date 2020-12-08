@@ -68,9 +68,9 @@ deploy_a:
 ## Adding Environment variables in Gitlab Pipeline
 Select Settings option from your Gitlab project and then jump to `Variables` section to add environment variables for your pipeline, e.g.
 
-![Gitlab Environment Add Variable](/images/gitlab_1.png)
+![Gitlab Environment Add Variable](/images/gitlab_1a.png)
 
-![Gitlab Environment Variables](/images/gitlab_2.png)
+![Gitlab Environment Variables](/images/gitlab_2a.png)
 
 
 ## Submitting CI/CD Submitting Pipeline
