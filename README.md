@@ -9,23 +9,6 @@ This image gives you the ability to perform automatic mobile app security testin
 Purpose-built for mobile app teams, NowSecure provides fully automated, mobile appsec testing coverage (static+dynamic+behavioral tests) optimized for the dev pipeline. Because NowSecure tests the mobile app binary post-build from Gitlab, it can test software developed in any language and provides complete results including newly developed code, 3rd party code, and compiler/operating system dependencies. With near zero false positives, NowSecure pinpoints real issues in minutes, with developer fix details, and routes tickets automatically into ticketing systems, such as Jira. NowSecure is frequently used to perform security testing in parallel with functional testing in the dev cycle. Requires a license for and connection to the NowSecure software.
  https://www.nowsecure.com
 
-## Sample Usage
-
-You should pass values for `AUTO_GROUP` and `AUTO_TOKEN` in via CI/CI environment variable in GitLab CI/CD Pipeline Settings instead in the Job Definition for security reasons.
-
-```yaml
-nowsecure:
-  stage: test
-  image: nowsecure/gitlab-ci:latest
-  variables:
-    AUTO_GROUP: 00000000-0000-0000-0000-000000000000
-    AUTO_TOKEN: xxx
-    BINARY_FILE: /path/to/artifact/apk/or/ipa/file
-  script:
-    - nowsecure.sh
-```
-
-
 ## Getting Started
 
 ### Access token
