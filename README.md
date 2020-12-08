@@ -20,6 +20,8 @@ Generate token as described in https://nowsecurehelp.zendesk.com/hc/en-us/articl
 - `AUTO_GROUP=default_group` - Specifies group for your account
 - `BINARY_FILE=default_binary` - Path to Android apk or IOS ipa - this file must be mounted via volume for the access
 
+**Note**: We recommend using secured environment variables in Gitlab to specify `AUTO_GROUP` and `BINARY_FILE` values.
+
 ### Optional Environment variables
 
 Following are optional parameters that can be set from environment variables:
