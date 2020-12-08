@@ -1,6 +1,6 @@
 FROM openjdk:8
 # plugin version from https://github.com/nowsecure/gitlabci/releases
-ENV PLUGIN_VERSION 1.2.0-rc4
+ENV PLUGIN_VERSION 1.2.0-rc5
 #
 # Download nowsecure plugin source
 RUN mkdir -p /usr/local/share/nowsecure

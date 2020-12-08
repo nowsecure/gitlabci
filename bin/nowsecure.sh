@@ -5,7 +5,7 @@
 ###
 
 if [[ -z "${PLUGIN_VERSION}" ]]; then
-  PLUGIN_VERSION="1.2.0-rc4"
+  PLUGIN_VERSION="1.2.0-rc5"
 fi
 
 if [[ -z "${PLUGIN_JAR}" ]]; then
@@ -49,4 +49,4 @@ if [[ -z "${SHOW_STATUS_MESSAGES}" ]]; then
   SHOW_STATUS_MESSAGES=true
 fi
 
-exec java -jar ${PLUGIN_JAR} --plugin-name circleci-nowsecure-auto-security-test --plugin-version ${PLUGIN_VERSION} --auto-url $NOWSECURE_URL --auto-token $NOWSECURE_TOKEN --auto-dir $NOWSECURE_ARTIFACTS_DIR --auto-file $NOWSECURE_BINARY_FILE --auto-group $NOWSECURE_GROUP --auto-wait $NOWSECURE_MIN_WAIT --auto-score $NOWSECURE_MIN_SCORE --auto-show-status-messages $SHOW_STATUS_MESSAGES --debug
+exec java -jar ${PLUGIN_JAR} --plugin-name gitlab-nowsecure-auto-security-test --plugin-version ${PLUGIN_VERSION} --auto-url $NOWSECURE_URL --auto-token $NOWSECURE_TOKEN --auto-dir $NOWSECURE_ARTIFACTS_DIR --auto-file $NOWSECURE_BINARY_FILE --auto-group $NOWSECURE_GROUP --auto-wait $NOWSECURE_MIN_WAIT --auto-score $NOWSECURE_MIN_SCORE --auto-show-status-messages $SHOW_STATUS_MESSAGES --debug
