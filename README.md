@@ -29,8 +29,7 @@ nowsecure:
 ## Getting Started
 
 ### Access token
-
-Generate token as described on https://docs.nowsecure.com/auto/integration-services/jenkins-integration. This token will be specified by environment variable AUTO_TOKEN.
+Generate token as described in https://nowsecurehelp.zendesk.com/hc/en-us/articles/360034149691 (Note: customer sign in is required to access this resource). This token will be specified by environment variable `AUTO_TOKEN`.
 
 ### Required Environment variables
 
