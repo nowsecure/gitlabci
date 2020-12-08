@@ -31,7 +31,7 @@ Following are optional parameters that can be set from environment variables:
 - `ARTIFACTS_DIR=/home/gradle/artifacts` - Specifies artifacts directory where json files are stored
 
 
-## Creating Gitlab-CI Pipeline:
+## Creating a Gitlab-CI Pipeline:
 Here is a sample config that you can save under `.gitlab-ci.yml` in your mobile project. Please read https://docs.gitlab.com/ee/ci/pipelines/pipeline_architectures.html for more information on Gitlab Pipeline.
 ```yaml
 nowsecure:
