@@ -12,23 +12,23 @@ Purpose-built for mobile app teams, NowSecure provides fully automated, mobile a
 ## Getting Started
 
 ### Access token
-Generate token as described in https://nowsecurehelp.zendesk.com/hc/en-us/articles/360034149691 (Note: customer sign in is required to access this resource). This token will be specified by environment variable `AUTO_TOKEN`.
+Generate token as described in https://nowsecurehelp.zendesk.com/hc/en-us/articles/360034149691 (Note: customer sign in is required to access this resource). This token will be specified by environment variable `NOWSECURE_TOKEN`.
 
 ### Required Environment variables
 
-- `AUTO_TOKEN=default_token` - Specifies auto token from your account
-- `AUTO_GROUP=default_group` - Specifies group for your account
-- `BINARY_FILE=default_binary` - Path to Android apk or IOS ipa - this file must be mounted via volume for the access
+- `NOWSECURE_TOKEN=default_token` - Specifies auto token from your account
+- `NOWSECURE_GROUP=default_group` - Specifies group for your account
+- `NOWSECURE_BINARY_FILE=default_binary` - Path to Android apk or IOS ipa - this file must be mounted via volume for the access
 
-**Note**: We recommend using secured environment variables in Gitlab to specify `AUTO_GROUP` and `BINARY_FILE` values.
+**Note**: We recommend using secured environment variables in Gitlab to specify `NOWSECURE_GROUP` and `NOWSECURE_BINARY_FILE` values.
 
 ### Optional Environment variables
 
 Following are optional parameters that can be set from environment variables:
 
-- `MAX_WAIT=nn (default 30)` - Default max wait in minutes for the mobile analysis
+- `NOWSECURE_MIN_WAIT=nn (default 30)` - Default max wait in minutes for the mobile analysis
 - `MAX_SCORE=nn (default 50)` - Minimum score the app must have otherwise it would fail
-- `ARTIFACTS_DIR=/home/gradle/artifacts` - Specifies artifacts directory where json files are stored
+- `NOWSECURE_ARTIFACTS_DIR=/home/gradle/artifacts` - Specifies artifacts directory where json files are stored
 
 
 ## Creating a Gitlab-CI Pipeline:
@@ -38,7 +38,7 @@ nowsecure:
   stage: test
   image: nowsecure/gitlab-ci:latest
   variables:
-    BINARY_FILE: test.apk
+    NOWSECURE_BINARY_FILE: test.apk
   script:
     - nowsecure.sh
 
