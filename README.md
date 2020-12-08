@@ -11,7 +11,7 @@ Purpose-built for mobile app teams, NowSecure provides fully automated, mobile a
 
 ## Sample Usage
 
-You should pass `auto_token` in via CI/CI variable in GitLab Settings instead in the Job Definition for security reasons.
+You should pass values for `AUTO_GROUP` and `AUTO_TOKEN` in via CI/CI environment variable in GitLab CI/CD Pipeline Settings instead in the Job Definition for security reasons.
 
 ```yaml
 nowsecure:
@@ -32,16 +32,66 @@ nowsecure:
 
 Generate token as described on https://docs.nowsecure.com/auto/integration-services/jenkins-integration. This token will be specified by environment variable AUTO_TOKEN.
 
-## Environment variables
+### Required Environment variables
 
 - `AUTO_TOKEN=default_token` - Specifies auto token from your account
 - `AUTO_GROUP=default_group` - Specifies group for your account
 - `BINARY_FILE=default_binary` - Path to Android apk or IOS ipa - this file must be mounted via volume for the access
 
-## Optional
+### Optional Environment variables
 
 Following are optional parameters that can be set from environment variables:
 
 - `MAX_WAIT=nn (default 30)` - Default max wait in minutes for the mobile analysis
 - `MAX_SCORE=nn (default 50)` - Minimum score the app must have otherwise it would fail
 - `ARTIFACTS_DIR=/home/gradle/artifacts` - Specifies artifacts directory where json files are stored
+
+
+## Creating Gitlab-CI Pipeline:
+Here is a sample config that you can save under `.gitlab-ci.yml` in your mobile project. Please read https://docs.gitlab.com/ee/ci/pipelines/pipeline_architectures.html for more information on Gitlab Pipeline.
+```yaml
+nowsecure:
+  stage: test
+  image: nowsecure/gitlab-ci:latest
+  variables:
+    BINARY_FILE: test.apk
+  script:
+    - nowsecure.sh
+
+stages:
+  - build
+  - test
+  - deploy
+
+image: alpine
+
+build_a:
+  stage: build
+  script:
+    - echo "Building...."
+
+test_a:
+  stage: test
+  script:
+    - echo "Testing..."
+
+deploy_a:
+  stage: deploy
+  script:
+    - echo "Deploying..."
+```
+
+## Adding Environment variables in Gitlab Pipeline
+Select Settings option from your Gitlab project and then jump to `Variables` section to add environment variables for your pipeline, e.g.
+
+![Gitlab Environment Add Variable](/images/gitlab_1.png)
+
+![Gitlab Environment Variables](/images/gitlab_2.png)
+
+
+## Submitting CI/CD Submitting Pipeline
+The CI/CD will be run when you check-in new changes or you can select CI/CD option from your Gitlab project and then click on `Run Pipeline` to submit a pipeline, e.g. 
+
+![Submit Pipeline](/images/gitlab_3.png)
+
+![View Pipeline](/images/gitlab_4.png)
