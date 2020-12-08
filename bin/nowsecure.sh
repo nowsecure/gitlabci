@@ -5,7 +5,7 @@
 ###
 
 if [[ -z "${PLUGIN_VERSION}" ]]; then
-  PLUGIN_VERSION="1.2.0-rc3"
+  PLUGIN_VERSION="1.2.0-rc4"
 fi
 
 if [[ -z "${PLUGIN_JAR}" ]]; then
