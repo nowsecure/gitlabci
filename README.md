@@ -17,7 +17,7 @@ Generate token as described in https://nowsecurehelp.zendesk.com/hc/en-us/articl
 ### Required Environment variables
 
 - `NOWSECURE_TOKEN=default_token` - Specifies auto token from your account
-- `NOWSECURE_GROUP=default_group` - Specifies group for your account
+- `NOWSECURE_GROUP=Access_Token` - Specifies token from your Platform account
 - `NOWSECURE_BINARY_FILE=default_binary` - Path to Android apk or IOS ipa - this file must be mounted via volume for the access
 
 **Note**: We recommend using secured environment variables in Gitlab to specify `NOWSECURE_GROUP` and `NOWSECURE_BINARY_FILE` values.
